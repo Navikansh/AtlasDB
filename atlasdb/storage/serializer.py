@@ -1,11 +1,7 @@
 """
 Binary Serializer
 ------------------
-Hand-rolled encode/decode for vector records -- deliberately not using
-pickle. Pickle is fine for a toy script, but it's opaque, unversioned,
-Python-only, and slow for numeric arrays. A real storage engine needs a
-documented, stable wire format so other languages (and future versions of
-this one) can read it.
+Hand-rolled encode/decode for vector records 
 
 Record wire format (little-endian):
     [ id_len: u16 ][ id: utf-8 bytes ]

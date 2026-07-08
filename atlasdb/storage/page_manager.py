@@ -3,8 +3,8 @@ Page Manager
 ------------
 Lowest layer of the storage stack. Treats a binary file as a sequence of
 fixed-size pages and exposes read/write/allocate by page id. Nothing above
-this layer is allowed to touch file offsets directly -- that's the whole
-point of the layering: record_manager.py maps logical records to
+this layer is allowed to touch file offsets directly 
+record_manager.py maps logical records to
 (page_id, offset) and never seeks into the file itself.
 """
 from __future__ import annotations

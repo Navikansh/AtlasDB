@@ -2,16 +2,17 @@
 Record Manager
 ---------------
 Sits between the Page Manager (fixed-size pages, no concept of a "record")
-and the Collection Manager (knows about vectors and metadata). Its job:
+and the Collection Manager (knows about vectors and metadata). 
+Its job:
 take variable-length encoded records and lay them out across pages as a
 flat, append-only byte log, while keeping an in-memory directory mapping
 record id -> (byte_offset, length) so lookups don't require scanning.
 
-This intentionally does NOT implement a free-space manager or compaction --
+This intentionally does NOT implement a free-space manager or compaction
 deletes are tombstoned (removed from the directory, bytes left in place).
 Reclaiming that space is exactly the kind of thing a real buffer-pool /
 free-list layer would do, and it's called out as future work rather than
-built here (see project README: "Explicitly cut").
+built here.
 """
 from __future__ import annotations
 
