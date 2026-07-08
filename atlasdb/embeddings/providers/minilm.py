@@ -3,9 +3,7 @@ MiniLM Provider
 -----------------
 Fast, 384-dim sentence embeddings via sentence-transformers'
 `all-MiniLM-L6-v2`. Good default: small model, quick to embed, solid
-general-purpose retrieval quality. Requires network access on first use
-to download model weights (see `atlasdb/embeddings/providers/fallback.py`
-for what happens when that's not available).
+general-purpose retrieval quality.
 """
 from __future__ import annotations
 

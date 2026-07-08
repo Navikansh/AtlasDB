@@ -1,18 +1,11 @@
 """
 Hashing Fallback Provider
 ----------------------------
-Deterministic, dependency-free, and NOT semantically meaningful. Exists
-for one reason: environments without network access can't download
-sentence-transformers model weights, and this lets the rest of the system
--- storage, indexes, planner, API, tests -- be built, run, and tested
-end-to-end without pretending network access exists.
+Deterministic, dependency-free, and NOT semantically meaningful. Just used a a fallback for purpose of testing.
 
-Implementation: hashed bag-of-words. Each token's MD5 hash picks a
-dimension and a sign; the resulting vector is L2-normalized. Same text
-always produces the same vector (useful for cache-hit tests), different
-text produces different vectors, but there is no actual semantic
-relationship between similar meanings and similar vectors -- don't use
-this for anything beyond local development and testing.
+Implementation: hashed bag-of-words. Each token's MD5 hash picks a dimension and a sign; the resulting vector is L2-normalized. 
+Same text always produces the same vector (useful for cache-hit tests), different text produces different vectors, 
+but there is no actual semantic relationship between similar meanings and similar vectors.
 """
 from __future__ import annotations
 

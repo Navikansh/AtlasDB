@@ -1,19 +1,15 @@
 """
 Provider Registry
 --------------------
-The one place that maps a config string ("minilm", "bge-small") to a
+The one place that maps a config string ("minilm") to a
 provider class, and the one function (`get_provider`) every caller uses
-instead of importing a concrete provider class directly. That indirection
-is what makes `embedding_model: bge-small` in config.yaml "just work"
-without any code change, and what makes the network-unavailable fallback
-automatic instead of something every call site has to handle.
+instead of importing a concrete provider class directly.
 """
 from __future__ import annotations
 
 import logging
 
 from atlasdb.embeddings.base import EmbeddingProvider
-from atlasdb.embeddings.providers.bge import BGESmallProvider
 from atlasdb.embeddings.providers.fallback import HashingFallbackProvider
 from atlasdb.embeddings.providers.minilm import MiniLMProvider
 
@@ -21,7 +17,6 @@ logger = logging.getLogger("atlasdb.embeddings")
 
 _PROVIDERS = {
     "minilm": MiniLMProvider,
-    "bge-small": BGESmallProvider,
 }
 
 
