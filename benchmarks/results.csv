@@ -1,0 +1,4 @@
+index,n_vectors,build_time_s,p50_latency_ms,p99_latency_ms,recall_at_k,qps,approx_memory_mb
+brute_force,100000,0.0121,12.6734,14.4626,1.0,79.53,48.83
+ivf,100000,9197.1105,2.3639,17.8707,0.8754,248.24,48.83
+hnsw,100000,1193.7127,4.5438,6.9185,0.8758,221.95,85.45

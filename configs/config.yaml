@@ -1,0 +1,24 @@
+# AtlasDB configuration.
+# Every value here has a corresponding field in atlasdb/config/loader.py.
+# Changing the index type or embedding model requires no code changes.
+
+index_type: hnsw            # brute_force | ivf | hnsw
+distance_metric: cosine     # cosine | euclidean | inner_product
+embedding_model: minilm     # minilm |
+cache_size: 10000
+data_dir: ./data
+
+# query planner
+brute_force_threshold: 5000
+selective_filter_threshold: 0.1
+
+# HNSW
+hnsw_m: 16
+hnsw_ef_construction: 100
+hnsw_ef_search: 50
+
+# IVF
+ivf_n_clusters: 32
+ivf_nprobe: 4
+
+log_level: INFO
