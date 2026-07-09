@@ -7,7 +7,7 @@ an LRU embedding cache, and a benchmark suite with real recall/latency
 numbers.
 
 Every module in this repo does exactly one thing, and every file is small
-enough to explain in a couple of sentences — that's deliberate.
+enough to explain in a couple of sentences.
 
 ## Table of contents
 
